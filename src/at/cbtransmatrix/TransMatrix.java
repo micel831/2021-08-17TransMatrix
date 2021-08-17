@@ -2,32 +2,21 @@ package at.cbtransmatrix;
 
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class TransMatrix {
     private int zeilen;
     private int spalten;
+    int [][] start;
+    int [][] ende;
 
-    private int [][] start = new int [zeilen][spalten];
-    private int [][] ende = new int [spalten][zeilen];
-
-    public static void main(String[] args) {
-        TransMatrix tm = new TransMatrix();
-        tm.eingabe();
-        tm.fuellen();
-        tm.drehen();
-    }
-
-    public void eingabe(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wieviele Zeilen soll die Matrix haben?");
-        zeilen = scanner.nextInt();
-        System.out.println("Wieviele Spalten soll die Matrix haben?");
-        spalten = scanner.nextInt();
+    public TransMatrix(int zeilen, int spalten){
+        this.zeilen = zeilen;
+        this.spalten = spalten;
     }
 
     public void fuellen(){
-        //System.out.println("Zeilen: " + zeilen + " Spalten: " + spalten);
+        start = new int [zeilen][spalten];
         Random random = new Random();
         for (int i = 0; i < zeilen; i++) {
             for (int j = 0; j < spalten; j++) {
@@ -38,6 +27,7 @@ public class TransMatrix {
     }
 
     public void drehen(){
+        ende = new int [spalten][zeilen];
         for (int i = 0; i < zeilen; i++){
             for (int j = 0; j < spalten; j++){
                 ende[j][i] = start[i][j];
