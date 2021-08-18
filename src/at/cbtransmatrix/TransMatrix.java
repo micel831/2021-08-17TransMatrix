@@ -15,6 +15,7 @@ public class TransMatrix {
         this.spalten = spalten;
     }
 
+    //Methode zum füllen des Arrays
     public void fuellen(){
         start = new int [zeilen][spalten];
         Random random = new Random();
@@ -26,6 +27,7 @@ public class TransMatrix {
         print(start);
     }
 
+    //Methode zum drehen des Arrays
     public void drehen(){
         ende = new int [spalten][zeilen];
         for (int i = 0; i < zeilen; i++){
@@ -36,6 +38,7 @@ public class TransMatrix {
         print(ende);
     }
 
+    //eigene Printmethode für das Array
     public void print(int [][]demo){
         System.out.println("-------------------");
         for(int i = 0; i < demo.length; i++){
